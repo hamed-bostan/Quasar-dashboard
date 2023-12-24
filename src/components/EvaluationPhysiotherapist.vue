@@ -1,6 +1,6 @@
 <template lang="">
   <div class="q-pa-md">
-    <q-markup-table>
+    <q-markup-table square separator>
       <thead>
         <tr>
           <th class="text-left">physiotherapist</th>
@@ -14,7 +14,9 @@
           <td class="text-left">Hosein jalalian</td>
           <td class="text-right">1/1/2022</td>
           <td class="text-right">online</td>
-          <td class="text-right">more</td>
+          <td class="text-right">
+            <q-btn outline style="color: goldenrod;" label="more" />
+          </td>
         </tr>
 
         <tr>
