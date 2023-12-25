@@ -2,7 +2,7 @@
   <div class="daily-activity-main-container row">
     <q-item v-for="task in tasks" :key="task.id" class="daily-activity column">
     <q-img
-      src='../assets/images/Doctor.png'
+      :src='task.image'
       spinner-color="white"
       style="height: 5rem; max-width: 5rem"
     />
@@ -14,38 +14,40 @@
     </q-item>
   </div>
 </template>
-<script>
-export default {
-  name: "DailyActivity",
+<script setup lang="ts">
+import { ref } from "vue";
 
-  data() {
-    return {
-      tasks: [
-        {
-          id: 1,
-          title: "Exercise",
-          description: "You have 2 exercise",
-        },
-        {
-          id: 2,
-          title: "Online class",
-          description: "You have 2 class",
-        },
-        {
-          id: 3,
-          title: "Conferance",
-          description: "You have 2 confrance",
-        },
-      ],
-    };
+const tasks = ref([
+  {
+    id: 1,
+    title: "Exercise",
+    description: "You have 2 exercise",
+    image: 'https://picsum.photos/500/300'
   },
-};
+  {
+    id: 2,
+    title: "Online class",
+    description: "You have 2 class",
+     image: 'https://picsum.photos/500/300'
+  },
+  {
+    id: 3,
+    title: "Conferance",
+    description: "You have 2 confrance",
+     image: 'https://picsum.photos/500/300'
+  },
+]);
+
+const urlMaker = (url:string)=>{
+  return new URL(url)
+}
 </script>
 <style>
 
 .daily-activity-main-container{
   display: flex;
   column-gap: 1rem;
+  background: green;
 }
 
 .daily-activity{

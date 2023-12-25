@@ -1,13 +1,23 @@
 <template>
   <div class="main-container">
     <div class="row">
-      <DailyActivity />
-      <PackageInventory />
+      <div class="col-8">
+        <DailyActivity />
+      </div>
+        <div class="col-4">
+          <PackageInventory />
+        </div>
     </div>
+
     <div class="row">
-      <EvaluationPhysiotherapist />
-      <Chat />
+      <div class="col-8">
+        <EvaluationPhysiotherapist />
+      </div>
+      <div class="col-4">
+        <Chat />
+      </div>
     </div>
+
   </div>
 </template>
 <script>
@@ -30,11 +40,12 @@ export default defineComponent({
 <style>
 .main-container {
   background: #525252;
-  width: 90rem;
+  /* width: 90rem; */
+  width: 100%;
   height: 100vh;
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 }
 </style>

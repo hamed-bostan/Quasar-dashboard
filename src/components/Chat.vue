@@ -32,4 +32,8 @@ export default {
   },
 };
 </script>
-<style lang=""></style>
+<style >
+.chat-names{
+  background: pink;
+}
+</style>
