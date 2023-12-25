@@ -1,51 +1,66 @@
-<template lang="">
-  <div class="q-pa-md">
-    <q-markup-table square separator>
-      <thead>
-        <tr>
-          <th class="text-left">physiotherapist</th>
-          <th class="text-right">date</th>
-          <th class="text-right">type</th>
-          <th class="text-right">xx</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="text-left">Hosein jalalian</td>
-          <td class="text-right">1/1/2022</td>
-          <td class="text-right">online</td>
-          <td class="text-right">
-            <q-btn outline style="color: goldenrod;" label="more" />
-          </td>
-        </tr>
-
-        <tr>
-          <td class="text-left">Hosein jamalian</td>
-          <td class="text-right">1/1/2022</td>
-          <td class="text-right">offline</td>
-          <td class="text-right">more</td>
-        </tr>
-
-        <tr>
-          <td class="text-left">Alireza Ahmadi</td>
-          <td class="text-right">1/1/2022</td>
-          <td class="text-right">offline</td>
-          <td class="text-right">more</td>
-        </tr>
-
-        <tr>
-          <td class="text-left">Mahsa Amini</td>
-          <td class="text-right">1/1/2022</td>
-          <td class="text-right">online</td>
-          <td class="text-right">more</td>
-        </tr>
-      </tbody>
-    </q-markup-table>
+<template>
+  <div >
+    <q-table
+      class="table-class"
+      flat
+      hide-bottom
+      square
+      :rows="rows"
+      :columns="columns"
+      row-key="name"
+    />
   </div>
 </template>
+
 <script>
+const columns = [
+  { label: 'Physiotherapist', field: row => row.name, align: 'left', },
+  { label: 'Date', field: 'date',align: 'left',},
+  { label: 'Type', field: 'type' , align: 'left'},
+  { field: 'more' , align: 'right'},
+]
+
+const rows = [
+  {
+    name: 'Hosein jalalian',
+    date: "1/1/2022"  ,
+    type: "online" ,
+    more: "more",
+  },
+  {
+    name: 'Hosein jamalian',
+    date: "1/1/2022",
+    type: "offline",
+    more: "more",
+  },
+  {
+    name: 'Alireza Ahmadi',
+    date:" 1/1/2022",
+    type: "offline",
+    more: "more",
+  },
+  {
+    name: 'Mahsa Amini',
+    date: "1/1/2022",
+    type: "online",
+    more: "more",
+  },
+]
+
 export default {
-  name: "EvaluationPhysiotherapist",
-};
+  setup () {
+    return {
+      columns,
+      rows
+    }
+  }
+}
 </script>
-<style lang=""></style>
+
+<style >
+
+.table-class {
+  background: #A5A5A5;
+}
+
+</style>
